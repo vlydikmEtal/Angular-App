@@ -1,7 +1,7 @@
 <div class="card-container">
   <div class="card-container__wrapper">
     <img class="card-image" [src]="product.image" [alt]="product.title" />
-    <h3 class="card-title">{{ product.title | truncateWords: 4 }}</h3>
+    <h3 class="card-title">{{ product.title | truncateWords }}</h3>
     <p class="card-price">Price: {{ product.price }}</p>
     <p class="card-count">Count: {{ product.rating.count }}</p>
 
