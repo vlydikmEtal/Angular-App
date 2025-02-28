@@ -14,7 +14,6 @@
   background-color: #ffffff;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   transition: transform 0.2s ease, box-shadow 0.2s ease;
-  flex: 1 1 auto;
   align-items: stretch;
   gap: 5px;
 }
@@ -25,9 +24,8 @@
 }
 
 .card-image {
-  width: 100%;
-  max-width: 100px;
-  height: auto;
+  width: auto;
+  height: 120px;
   align-self: center;
   object-fit: cover;
   border-radius: 8px;
@@ -47,19 +45,22 @@
   font-weight: 700;
   color: #007bff;
   text-align: center;
+  margin-bottom: 10px;
 }
 
 .card-count {
   font-size: 0.9rem;
   color: #666666;
   text-align: center;
+  margin-bottom: 10px;
 }
 
 .card-category {
-  font-size: 0.9rem;
+  font-size: 1.0rem;
   color: #666666;
   text-align: center;
   font-weight: 600;
+  margin-bottom: 15px;
 }
 
 .card-details {
@@ -72,16 +73,22 @@
   margin-top: 10px;
   transition: max-height 0.4s ease-out;
 }
-
+.card-container__wrapper {
+  display: flex;
+  flex-direction: column;
+  flex: 1 1 auto;
+  justify-content: space-between;
+}
 .card-details.visible {
   max-height: 220px;
 }
 
 .card-description {
-  font-size: 0.9rem;
+  font-size: 1.1rem;
   color: #555555;
   line-height: 1.4;
   text-align: center;
+  margin-bottom: 20px;
 }
 
 .card-rate {

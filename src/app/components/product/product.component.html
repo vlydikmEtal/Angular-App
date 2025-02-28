@@ -1,15 +1,17 @@
 <div class="card-container">
-  <img class="card-image" [src]="product.image" [alt]="product.title" />
-  <h3 class="card-title">{{ product.title }}</h3>
-  <p class="card-category">{{ product.category }}</p>
-  <p class="card-price">Price: {{ product.price }}</p>
-  <p class="card-count">Count: {{ product.rating.count }}</p>
+  <div class="card-container__wrapper">
+    <img class="card-image" [src]="product.image" [alt]="product.title" />
+    <h3 class="card-title">{{ product.title | truncateWords: 4 }}</h3>
+    <p class="card-price">Price: {{ product.price }}</p>
+    <p class="card-count">Count: {{ product.rating.count }}</p>
 
-  <button class="button" (click)="toggleDetails()">
-    {{ showDetails ? 'Hide Details' : 'Show More' }}
-  </button>
+    <button class="button" (click)="toggleDetails()">
+      {{ showDetails ? "Hide Details" : "Show More" }}
+    </button>
+  </div>
 
-  <div class="card-details" [ngClass]="{ 'visible': showDetails }">
+  <div class="card-details" [ngClass]="{ visible: showDetails }">
+    <p class="card-category">{{ product.category | uppercase }}</p>
     <p class="card-description">{{ product.description }}</p>
     <p class="card-rate">Rate: {{ product.rating.rate }}</p>
   </div>
