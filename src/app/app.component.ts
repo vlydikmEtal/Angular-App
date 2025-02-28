@@ -1,13 +1,31 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
+import { ProductComponent } from './components/product/product.component';
+import { Profile } from './data/interfaces/profile.inrerfaces';
+import { ProfileService } from './data/services/profile.service';
+import { FilterProductsPipe } from './data/pipes/filter-products.pipe';
+import { FilterProductsComponent } from './components/filter-products/filter-products.component';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet],
+  imports: [RouterOutlet, ProductComponent, FilterProductsPipe, FilterProductsComponent],
   templateUrl: './app.component.html',
-  styleUrl: './app.component.scss'
+  styleUrl: './app.component.scss',
 })
 export class AppComponent {
-  title = 'my-app';
+  products: Profile[] = [];
+  search: string = '';
+
+  ProfileService = inject(ProfileService);
+
+  constructor() {
+    this.ProfileService.getTestProduct().subscribe((val) => {
+      this.products = val;
+    });
+  }
+
+  updateSearchTerm(term: string) {
+    this.search = term;
+  }
 }

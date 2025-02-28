@@ -1,0 +1,9 @@
+.filter-container {
+  padding-top: 30px;
+  input {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    font-size: calc(16px + 2 * ((100vw - 320px) / 1540));
+  }
+}
