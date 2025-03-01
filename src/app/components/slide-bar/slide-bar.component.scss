@@ -1,0 +1,23 @@
+:host {
+  width: 100%;
+  max-width: 250px;
+}
+.slider-bar__wrapper {
+  background-color: #fff;
+  width: 100%;
+  padding: 20px;
+  border-radius: 12px;
+  h3 {
+    margin-bottom: 20px;
+    font-weight: 600;
+    font-size: calc(20px + 2 * ((100vw - 320px) / 1540));
+  }
+  ul {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    li {
+      cursor: pointer;
+    }
+  }
+}

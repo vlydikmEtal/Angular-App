@@ -1,19 +1,20 @@
 <div class="slider-bar__wrapper">
+  <h3>Filter by category</h3>
   <ul>
-    <li>
-      1
+    <li (click)="selectCategory('men\'s clothing')">
+      MEN'S CLOTHING
     </li>
-    <li>
-      2
+    <li (click)="selectCategory('jewelery')">
+      JEWELERY
     </li>
-    <li>
-      3
+    <li (click)="selectCategory('electronics')">
+      ELECTRONICS
     </li>
-    <li>
-      4
+    <li (click)="selectCategory('women\'s clothing')">
+      WOMEN'S CLOTHING
     </li>
-    <li>
-      5
+    <li (click)="selectCategory(null)">
+      Show All
     </li>
   </ul>
 </div>

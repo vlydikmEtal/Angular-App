@@ -5,10 +5,12 @@
     ></app-filter-products>
   </div>
   <div class="main-content__wrapper">
-    <app-slide-bar> </app-slide-bar>
+    <app-slide-bar (categorySelected)="updateCategory($event)"></app-slide-bar>
     <div class="product-card__wrapper">
       @for (product of products | filterProducts: search; track product.id) {
-        <app-product [product]="product"></app-product>
+        @if (!selectedCategory || product.category === selectedCategory) {
+          <app-product [product]="product"></app-product>
+        }
       }
     </div>
   </div>

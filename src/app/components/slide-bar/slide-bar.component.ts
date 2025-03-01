@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-slide-bar',
@@ -8,5 +8,9 @@ import { Component } from '@angular/core';
   styleUrl: './slide-bar.component.scss'
 })
 export class SlideBarComponent {
+  @Output() categorySelected = new EventEmitter<string | null>();
 
+  selectCategory(category: string | null) {
+    this.categorySelected.emit(category);
+  }
 }
